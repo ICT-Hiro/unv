@@ -24,9 +24,15 @@
     const params = new URLSearchParams(window.location.search);
     const gdocsId = params.get('gdocsId');
     const customUrl = params.get('url');
+    const sprUrl = params.get('gsheetId');
 
     let pdfUrl = '';
 
+     
+    if (gsheetId) {
+      pdfUrl = `https://docs.google.com/spreadsheets/d/${gsheetId}/export?format=pdf`;
+      console.log(pdfUrl)
+    }
     if (gdocsId) {
       pdfUrl = `https://docs.google.com/document/d/${gdocsId}/export?format=pdf`;
       console.log(pdfUrl)
